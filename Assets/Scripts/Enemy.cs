@@ -37,7 +37,7 @@ public class Enemy : MovingObject {
 
 		AttemptMove <Player> (xDir, yDir);
 	}
-	
+
 	protected override void OnCantMove <T> (T component) {
 		Player hitPlayer = component as Player;
 		hitPlayer.LoseFood (playerDamage);
