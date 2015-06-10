@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance = null;
 	public BoardManager boardScript;
+	public int playerFoodPoints = 100;
+	// This is how you can hide a public var from editor without making it private
+	[HideInInspector] public bool playersTurn = true;
 
 	private int level = 3;
 
@@ -22,6 +25,10 @@ public class GameManager : MonoBehaviour {
 
 	void InitGame() {
 		boardScript.SetupScene (level);
+	}
+
+	public void GameOver() {
+		enabled = false;
 	}
 
 	// Update is called once per frame
