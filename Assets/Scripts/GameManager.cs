@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour {
 	private List<Enemy> enemies;
 	private bool enemiesMoving;
 
-	// Use this for initialization
 	void Awake () {
 		if (instance == null)
 			instance = this;
@@ -37,12 +36,11 @@ public class GameManager : MonoBehaviour {
 		enabled = false;
 	}
 
-	// Update is called once per frame
 	void Update () {
-	if (playersTurn || enemiesMoving)
-		return;
-	
-	StartCoroutine(MoveEnemies());
+		if (playersTurn || enemiesMoving)
+			return;
+
+		StartCoroutine(MoveEnemies());
 	}
 
 	public void AddEnemyToList(Enemy script) {
