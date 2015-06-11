@@ -104,9 +104,10 @@ public class Player : MovingObject {
 	}
 
 	private void CheckIfGameOver() {
-		if (food <= 0)
+		if (food <= 0) {
 			SoundManager.instance.PlaySingle(gameOverSound);
 			SoundManager.instance.musicSource.Stop ();
 			GameManager.instance.GameOver ();
+		}
 	}
 }
